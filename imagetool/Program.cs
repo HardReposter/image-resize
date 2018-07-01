@@ -71,8 +71,12 @@
             string name = pathparts[pathparts.Length - 1].Split('.')[1];
             return name;
         }
-        private static void ResizeImage(string ipath, Size size)
+        private static void ResizeImage(string ipath, Size size) 
         {
+            // Code by Joshua Folkerts (folkertsj) on ASP.NET Forums
+            // https://forums.asp.net/t/1186865.aspx?Resizing+Images+with+C+with+no+quality+loss
+            // changes (or improvements) were made by me.
+
             string newPath = $"{GetDirectoryPath(ipath)}{GetFileNameWithoutExt(ipath)}_{size.Width}.{GetFileExtension(ipath)}";
             Console.WriteLine($"Resizing to {newPath} with size {size.Width}{Environment.NewLine}");
 
